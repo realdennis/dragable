@@ -21,7 +21,8 @@ const dragable = target => {
     window.addEventListener('pointermove', onMousemove);
     window.addEventListener('pointerup', onMouseup);
   };
-  const mounted = () => {
+  const effect = () => {
+    cleanUp(); // clean up before attach;
     target.addEventListener('pointerdown', onMousedown);
   };
   const cleanUp = () => {
