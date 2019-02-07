@@ -1,30 +1,14 @@
-# `use-drag`
+# `dragable`
 
-React hook makes a component draggable.
-
-## Install
-
-```
-yarn add use-drag
-```
+DOM draggable using pointer events.
 
 ## Usage
 
-```jsx
-import { useRef } from 'react';
-import useDrag from 'use-drag';
-
-const Demo = () => {
-  const ref = useRef(null);
-  useDrag(ref);
-  return <div ref={ref}>Now I'm draggable!</div>;
-};
+```javascript
+const [effect,cleanup]  = dragable(/* selector */)
+effect()
+/*
+ * You can drag after call this
+ */
+cleanup() // Clear effect
 ```
-
-## Reference
-
-```jsx
-useDrag(ref);
-```
-
-- `ref` &mdash; a react reference object. `ref.current` will be used.
